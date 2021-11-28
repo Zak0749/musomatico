@@ -1,0 +1,29 @@
+canvas {
+position: fixed;
+  top: 20;
+  left: 0;
+  width: 100%;
+}
+
+main {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.oddP {
+  grid-column: 10 / 13;
+  padding-top: 150vh;
+}
+
+.evenP {
+  grid-column: 1 / 4;
+  padding-top: 50vh;
+  padding-bottom: 150vh;
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    display: block;
+  }
+}

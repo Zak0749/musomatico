@@ -1,0 +1,20 @@
+<mat-toolbar color="accent">
+  <button mat-button routerLink="/">
+    <img src="assets/logo.png" height="50px" width="50px">
+    <span class="title">Musomatic</span>
+  </button>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{themeService.theme === "dark" ? "dark_mode": "light_mode"}}</mat-icon>
+  </button>
+
+  <button mat-icon-button routerLink="/editor">
+    <mat-icon>edit</mat-icon>
+  </button>
+
+  <button mat-icon-button routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+</mat-toolbar>

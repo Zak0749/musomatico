@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$musomatic-light-primary: mat.define-palette(mat.$purple-palette);
+$musomatic-light-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$musomatic-light-warn: mat.define-palette(mat.$red-palette);
+$musomatic-light-theme: mat.define-light-theme((
+  color: (
+    primary: $musomatic-light-primary,
+    accent: $musomatic-light-accent,
+    warn: $musomatic-light-warn,
+  )
+));
+
+$musomatic-dark-primary: mat.define-palette(mat.$purple-palette);
+$musomatic-dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$musomatic-dark-warn: mat.define-palette(mat.$red-palette);
+$musomatic-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $musomatic-dark-primary,
+    accent: $musomatic-dark-accent,
+    warn: $musomatic-dark-warn,
+  )
+));
+
+.dark-theme {
+  @include mat.all-component-themes($musomatic-dark-theme);
+}
+
+.light-theme {
+  @include mat.all-component-themes($musomatic-light-theme);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page {
+  margin: 5px;
+  margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+}
