@@ -32,12 +32,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   people = [
     {
       name: 'Lewis O’Connor',
-      role: 'Manager Director',
+      role: 'Managing Director',
       img: 'https://pbs.twimg.com/media/FCJeSIRWUAUz0S4?format=jpg',
     },
     {
       name: 'Josh Robertson',
-      role: 'Manager Director',
+      role: 'Marketing Director',
       img: 'https://pbs.twimg.com/media/FCSzR6IXEAMEy96?format=jpg',
     },
     {

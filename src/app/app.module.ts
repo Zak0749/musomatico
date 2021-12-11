@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpotifyService } from './services/spotify.service';
 import { PlaqueComponent } from './plaque/plaque.component';
 import { NgxThreeModule } from 'ngx-three';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { NgxThreeModule } from 'ngx-three';
     MatGridListModule,
     HttpClientModule,
     NgxThreeModule,
+    AngularFireModule.initializeApp((environment as any).firebase),
   ],
   providers: [ThemeService, SpotifyService],
   bootstrap: [AppComponent],
