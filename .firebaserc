@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "musomatic-fcdb1": {
+      "hosting": {
+        "musomatic": [
+          "musomatic-fcdb1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "musomatic-fcdb1"
+  }
+}

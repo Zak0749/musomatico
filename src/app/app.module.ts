@@ -15,6 +15,11 @@ import { EditorComponent } from './editor/editor.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
+import { SpotifyService } from './services/spotify.service';
+import { PlaqueComponent } from './plaque/plaque.component';
+import { NgxThreeModule } from 'ngx-three';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
     ToolbarComponent,
     ModelComponent,
     EditorComponent,
+    PlaqueComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +41,11 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
+    HttpClientModule,
+    NgxThreeModule,
   ],
-  providers: [ThemeService],
+  providers: [ThemeService, SpotifyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,18 @@
+<th-canvas [style]="{ width, height}">
+  <th-scene>
+    <th-object3D loadGLTF url="assets/plaque.gltf" [position]="[0, 1, 0]">
+      <th-object3D [rotation]="[0,0,-0.3]">
+        <th-mesh [position]="[-0.420, 0.1, 0.00]" [rotation]="[0, -1.57, 0]">
+          <th-planeGeometry [args]=" [4.5,6.1]">
+          </th-planeGeometry>
+          <th-meshLambertMaterial [map]="texture" [transparent]="true"></th-meshLambertMaterial>>
+        </th-mesh>
+      </th-object3D>
+    </th-object3D>
+    <th-ambientLight> </th-ambientLight>
+
+    <th-perspectiveCamera [args]="[45, 2, 0.1, 100]" [position]="[-10, 10, 10]" [lookAt]="[0, 0, 0]">
+      <th-orbitControls></th-orbitControls>
+    </th-perspectiveCamera>
+  </th-scene>
+</th-canvas>

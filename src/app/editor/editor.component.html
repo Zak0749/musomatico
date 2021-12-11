@@ -1,28 +1,31 @@
-<canvas class="middleP" #canvas id="canvas" style="width: 4fr; height: 90vh;" width="4fr" height="90vh"></canvas>
+<!-- <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Email</mat-label>
+  <input type="email" matInput [formControl]="formInfo" placeholder="">
+  <mat-hint>Paste the url of the to be put on the plaque</mat-hint>
+</mat-form-field>
 
-<main class="page">
-  <div class="evenP">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
-  <div class="oddP">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
-  <div class="evenP">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
-  <div class="oddP">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
+<button mat-button (click)="submit()">Submit</button>
+
+<div *ngIf="data$ | async as data">
+  {{data.name}}
+  <img [src]="data.images[0].url">
+</div>
+
+<canvas #canvas></canvas> -->
+<main>
+  <section>
+    <app-plaque [imgUrl]="imgUrl" [title]="title" [artists]="artists" [width]="canvasWidth" [height]="canvasHeight">
+    </app-plaque>
+  </section>
+
+  <section>
+    <form (submit)="submitForm($event)" style="padding: 50px;">
+      <mat-form-field appearance="fill">
+        <mat-label>Url</mat-label>
+        <input matInput [formControl]="url">
+        <mat-hint>Paste the url of the spotify album you want to preview</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Sumbit</button>
+    </form>
+  </section>
 </main>

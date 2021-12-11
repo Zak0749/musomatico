@@ -62,7 +62,7 @@ export class ModelComponent implements OnInit, AfterViewInit {
     this.gltfLoader.load('/assets/scene.glb', (gltf) => {
       this.model = gltf.scene;
       var box = new Box3().setFromObject(this.model);
-      box.getCenter(this.model.position); // this re-sets the mesh position
+      box.getCenter(this.model.position);
       this.model.position.multiplyScalar(-1);
       this.scene!.add(this.model);
     });

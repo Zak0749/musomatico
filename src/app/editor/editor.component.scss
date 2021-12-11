@@ -1,29 +1,20 @@
-canvas {
-position: fixed;
-  top: 20;
-  left: 0;
-  width: 100%;
-}
-
 main {
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.oddP {
-  grid-column: 10 / 13;
-  padding-top: 150vh;
-}
-
-.evenP {
-  grid-column: 1 / 4;
-  padding-top: 50vh;
-  padding-bottom: 150vh;
-}
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   main {
     display: block;
   }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
 }

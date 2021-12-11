@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 
 @Component({
@@ -9,10 +9,24 @@ import { ThemeService } from '../services/theme.service';
 export class HomeComponent implements OnInit, AfterViewInit {
   constructor(public themeService: ThemeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onResize();
+  }
 
-  ngAfterViewInit(): void {
-    (<any>window).twttr.widgets.load();
+  ngAfterViewInit(): void {}
+
+  canvasWidth = '300px';
+  canvasHeight = '300px';
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (window.innerWidth < 600) {
+      this.canvasWidth = '100vw';
+      this.canvasWidth = '100vw';
+      return;
+    }
+    this.canvasWidth = '400px';
+    this.canvasHeight = '400px';
   }
 
   people = [
@@ -39,7 +53,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {
       name: 'Adham Hayat',
       role: 'Sales Director',
-      img: 'https://pbs.twimg.com/media/FCJeSIRWUAUz0S4?format=jpg',
+      img: 'https://pbs.twimg.com/media/FCtjiqrXsAUew-u?format=jpg',
     },
     {
       name: 'Brandon Wilson',
