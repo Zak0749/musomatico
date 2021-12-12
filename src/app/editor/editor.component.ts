@@ -18,7 +18,7 @@ import {
   WebGLRenderer,
 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Album, SpotifyService } from '../services/spotify.service';
+import { SpotifyService } from '../services/spotify.service';
 import { ThemeService } from '../services/theme.service';
 
 @Component({
@@ -52,6 +52,7 @@ export class EditorComponent implements OnInit {
   artists = 'The Beatles';
 
   url = new FormControl('');
+  model = new FormControl(true);
 
   submitForm(e: Event) {
     e.preventDefault();

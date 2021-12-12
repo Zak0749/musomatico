@@ -20,12 +20,16 @@ section {
   margin-top: 20px;
 }
 
-.model-box {
+.model-box-rev {
   display: flex; justify-content: space-between; flex-direction: row-reverse;
 }
 
+.model-box-nor {
+  display: flex; justify-content: space-between; flex-direction: row;
+}
+
 @media screen and (max-width: 600px) {
-  .model-box {
+  .model-box-rev, .model-box-nor  {
     display: block;
 
   }

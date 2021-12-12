@@ -14,16 +14,40 @@
 <canvas #canvas></canvas> -->
 <main>
   <section>
-    <app-plaque [imgUrl]="imgUrl" [title]="title" [artists]="artists" [width]="canvasWidth" [height]="canvasHeight">
-    </app-plaque>
+    <div *ngIf="model.value; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <app-plaque [imgUrl]="imgUrl" [title]="title" [artists]="artists" [width]="canvasWidth" [height]="canvasHeight">
+      </app-plaque>
+    </ng-template>
+    <ng-template #elseBlock>
+      <app-keychain #keychain [imgUrl]="imgUrl" [title]="title" [artists]="artists" [width]="canvasWidth"
+        [height]="canvasHeight">
+      </app-keychain>
+    </ng-template>
   </section>
 
-  <section>
-    <form (submit)="submitForm($event)" style="padding: 50px;">
+  <section style="padding: 50px;">
+    <p>What object do you want to see this on</p>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Object</mat-label>
+      <mat-select [formControl]="model">
+        <mat-option [value]="true">
+          Plaque
+        </mat-option>
+        <mat-option [value]="false">
+          KeyChain
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <form (submit)="submitForm($event)">
+      <p>To view your personalised item sipmly paste the url of the spotify album or track you want to preview into the
+        box below</p>
       <mat-form-field appearance="fill">
         <mat-label>Url</mat-label>
         <input matInput [formControl]="url">
-        <mat-hint>Paste the url of the spotify album you want to preview</mat-hint>
+        <mat-hint></mat-hint>
       </mat-form-field>
       <button mat-raised-button color="accent" type="submit">Sumbit</button>
     </form>
