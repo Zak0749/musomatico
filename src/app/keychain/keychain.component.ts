@@ -38,10 +38,10 @@ export class KeychainComponent implements OnInit, OnChanges {
     };
     img.src = this.imgUrl;
 
-    this.ctx.font = '80px Arial';
+    this.ctx.font = '80px Montserrat';
     this.ctx.fillText(this.title, 55, 610, 500);
 
-    this.ctx.font = '50px Arial';
+    this.ctx.font = '50px Montserrat';
     this.ctx.fillText(this.artists, 55, 660, 500);
 
     const uibar = new Image();

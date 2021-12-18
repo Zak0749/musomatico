@@ -49,10 +49,10 @@ export class PlaqueComponent implements OnInit, OnChanges {
     };
     img.src = this.imgUrl;
 
-    this.ctx.font = '45px Arial';
+    this.ctx.font = '45px Montserrat';
     this.ctx.fillText(this.title, 60, 400, 330);
 
-    this.ctx.font = '25px Arial';
+    this.ctx.font = '25px Montserrat';
     this.ctx.fillText(this.artists, 60, 430, 330);
 
     const uibar = new Image();

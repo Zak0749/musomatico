@@ -34,10 +34,7 @@ export class EditorComponent implements OnInit {
     if (window.innerWidth < 600) {
       this.canvasWidth = '100vw';
       this.canvasHeight = '100vw';
-      return;
     }
-    this.canvasWidth = '100vh';
-    this.canvasHeight = '100vh';
   }
 
   ngOnInit(): void {

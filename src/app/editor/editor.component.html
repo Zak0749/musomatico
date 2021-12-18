@@ -27,6 +27,7 @@
   </section>
 
   <section style="padding: 50px;">
+    <h1>{{model.value ? "Spotify Plaque £6.99": "Spotify Keychain £3.50"}}</h1>
     <p>What object do you want to see this on</p>
 
     <mat-form-field appearance="fill">
@@ -49,7 +50,11 @@
         <input matInput [formControl]="url">
         <mat-hint></mat-hint>
       </mat-form-field>
-      <button mat-raised-button color="accent" type="submit">Sumbit</button>
+      <button mat-raised-button color="accent" type="submit">Preview!</button>
     </form>
+
+    <a color="accent" mat-raised-button
+      href="https://docs.google.com/forms/d/17sP3-OoIzKTPdxjhM3owirPtQv3o3D0DzHx8uAzd5L8/viewform?ts=61b9fed1">Place
+      your order here</a>
   </section>
 </main>
