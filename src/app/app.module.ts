@@ -23,8 +23,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { KeychainComponent } from './keychain/keychain.component';
 import { MatSelectModule } from '@angular/material/select';
-import { OrderComponent } from './order/order.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     EditorComponent,
     PlaqueComponent,
     KeychainComponent,
-    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +51,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgxThreeModule,
     MatSelectModule,
     AngularFireModule.initializeApp((environment as any).firebase),
+    AngularFireAnalyticsModule,
     MatDialogModule,
   ],
   providers: [ThemeService, SpotifyService],
